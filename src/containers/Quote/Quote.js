@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import QuoteText from '../../components/QuoteText/QuoteText';
 import QuoteAuthor from '../../components/QuoteAuthor/QuoteAuthor';
@@ -13,16 +14,14 @@ export default class Quote extends Component {
   }
 
   componentDidMount() {
-    fetch('https://favqs.com/api/qotd')
-      .then(response => response.json())
-      .then((data) => {
+    axios.get(`https://favqs.com/api/qotd`)
+      .then(res => {
         this.setState({
-          quoteAuthor: data.quote.author,
-          quoteText: data.quote.body,
+          quoteAuthor: res.data.quote.author,
+          quoteText: res.data.quote.body,
           isLoading: false
         });
       })
-      .catch(console.log);
   }
 
   render() {
