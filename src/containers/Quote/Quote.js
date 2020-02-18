@@ -15,7 +15,7 @@ export default class Quote extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://favqs.com/api/qotd`)
+    axios.get(process.env.REACT_APP_API_URL)
       .then(res => {
         this.setState({
           quoteAuthor: res.data.quote.author,
