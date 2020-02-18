@@ -6,10 +6,23 @@ import QuoteAuthor from '../../components/QuoteAuthor/QuoteAuthor';
 export default class Quote extends Component {
 
   state = {
-    isLoading: false,
-    quoteText: 'Be yourself; everyone else is already taken',
-    quoteAuthor: 'Oscar Wilde',
+    isLoading: true,
+    quoteText: '',
+    quoteAuthor: '',
     error: ''
+  }
+
+  componentDidMount() {
+    fetch('https://favqs.com/api/qotd')
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          quoteAuthor: data.quote.author,
+          quoteText: data.quote.body,
+          isLoading: false
+        });
+      })
+      .catch(console.log);
   }
 
   render() {
