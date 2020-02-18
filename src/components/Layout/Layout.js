@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
+import Aux from '../../hoc/Aux';
 const Layout = () => {
   return (
-    <div>
-      <p>this the layout of the Page</p>
-    </div>
+    <Aux >
+      <div> this the quote text from API</div>
+      <div> this the quote author</div>
+    </Aux >
   )
 }
 
