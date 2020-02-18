@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Aux from '../../hoc/Aux';
+import Quote from '../../containers/Quote/Quote';
 const Layout = () => {
   return (
     <Aux >
-      <div> this the quote text from API</div>
-      <div> this the quote author</div>
+      <Quote />
     </Aux >
   )
 }
