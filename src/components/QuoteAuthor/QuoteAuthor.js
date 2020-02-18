@@ -5,7 +5,8 @@ const quoteAuthor = (props) => {
   const quoteAuthorStyle = {
     'fontSize': '20px',
     'textAlign': 'center',
-    'padding': '20px'
+    'padding': '20px',
+    'color': 'white'
   }
   return (
     <div style={quoteAuthorStyle}>

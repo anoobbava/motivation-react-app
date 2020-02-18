@@ -6,6 +6,7 @@ const quoteText = (props) => {
     'fontSize': '35px',
     'textAlign': 'center',
     'padding': '100px',
+    'color': 'white'
   }
   return (
     <div style={quoteTextStyle}>

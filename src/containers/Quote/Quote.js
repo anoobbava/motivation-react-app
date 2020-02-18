@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import QuoteText from '../../components/QuoteText/QuoteText';
 import QuoteAuthor from '../../components/QuoteAuthor/QuoteAuthor';
+import Loader from 'react-loader-spinner';
 
 export default class Quote extends Component {
 
@@ -28,11 +29,17 @@ export default class Quote extends Component {
     const { quoteAuthor, quoteText, isLoading } = this.state;
     return (
       <div>
-        {
-          isLoading ?
-            <div> Loading the data</div>
-            : <div>  <QuoteText quoteText={quoteText} />
-              <QuoteAuthor quoteAuthor={quoteAuthor} /> </div>
+        {isLoading ?
+          <div style={{ textAlign: 'center', padding: '40px' }} >
+            <Loader
+              type="Rings"
+              color="white"
+              height={300}
+              width={300}
+              timeout={7000}
+            /></div>
+          : <div><QuoteText quoteText={quoteText} />
+            <QuoteAuthor quoteAuthor={quoteAuthor} /> </div>
         }
       </div>
     )
